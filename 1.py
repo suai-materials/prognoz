@@ -20,5 +20,7 @@ print("Прогноз: ", *y_pred, sep=" ")
 
 print(pd.DataFrame(np.array([2021, 2022]), y_pred))
 
-pt.scatter(df["X"], df["Y4"])
+pt.plot(df["X"], df["Y4"], marker='o')
+
+pt.plot(np.append(x, [[2021], [2022]]).reshape(-1, 1), model_reg.predict(np.append(x, [[2021], [2022]]).reshape(-1, 1)), marker='x')
 pt.show()
